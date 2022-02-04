@@ -9,6 +9,7 @@ from random import choice,randint
 print("enter 1 for the maual_change and 2 for automatic : ")
 inp =input()
 interface=input("Enter the network interface :").strip()
+
 def main():
     if inp == "1":
         #interface=input("Enter the network      interface :").strip()
@@ -17,11 +18,7 @@ def main():
     elif inp == "2":
         random =mac_rand()
         print(random)
-        Change_Mac(interface,random)
-       
-
-
-
+        Change_Mac(interface,random)       
 
 def mac_rand():
     cisco =["00","40","96"]
@@ -38,8 +35,6 @@ def Change_Mac(interface,new_mac):
     subprocess.call(["ifconfig "+str(interface)+" hw ether "+str(new_mac)+" "],shell= True) #ifconfig eth0 hw ether  44:s4:53:30:33 this 
     subprocess.call(["ifconfig "+str(interface)+ " up "],shell= True)
     
-    
-
 def CurrentMac():
 
     out = subprocess.check_output(["ifconfig"+" eth0"],shell= True)
