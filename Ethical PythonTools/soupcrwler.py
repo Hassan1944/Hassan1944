@@ -11,4 +11,4 @@ for link in soup.find_all('a'):
     # print(link.get("href"))
     test =link.get("href")
     link =urljoin(url,test)
-    print(link)
+    print(kkk)
